@@ -1,0 +1,33 @@
+/**
+ *
+ * servicelane.c
+ *
+ * A C solution to the service lane challenge on hackerrank.com
+ *
+ * Finds the largest vehicle that can pass through the service lane in each test case
+ *
+ */
+ 
+#include <stdio.h>
+
+int main()
+{
+    int N, T;
+    scanf("%d", &N);
+    scanf("%d", &T);
+    int width[N];
+    for (int a = 0; a < N; a++) {
+        scanf("%d", &width[a]);
+    }
+    for (int b = 0; b < T; b++) {
+        int i, j, min=3;
+        scanf ("%d", &i);
+        scanf("%d", &j);
+        for (int c = i; c < (j+1); c++) {
+            if (width[c] < min){
+                min = width[c];
+            }
+        }
+        printf("%d\n", min);
+    }
+}
